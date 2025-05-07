@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Your canvas for the stars background -->
+    <canvas id="space-travel" class="fixed w-screen h-screen top-0 left-0 z-0"></canvas>
+    
+    <!-- Your page content goes here -->
+    <div style="position: relative; z-index: 10;">
+        <!-- Content that appears above the stars background -->
+    </div>
+    
+    <!-- This is what powers the canvas -->
+    <script id="space-travel-script">
+        const SpaceTravel = import("https://unpkg.com/space-travel?module")
+            .then(st => new st.default({ 
+                canvas: document.getElementById("space-travel") 
+            }).start());
+    </script>
+</body>
+</html>
